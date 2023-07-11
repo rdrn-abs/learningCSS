@@ -1,4 +1,5 @@
 import React from 'react';
+
 const Pendulum = () =>
 	<div className="holder">
 		<div className="pendulum">
