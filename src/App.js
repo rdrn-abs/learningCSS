@@ -1,9 +1,10 @@
 import { React } from 'react';
 import './App.scss';
+import Pendulum from './components/Pendulum';
 
 const App = () =>
 	<div className="App">
-		Ready to start.
+		<Pendulum/>
 	</div>;
 
 export default App;
