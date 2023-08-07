@@ -5,9 +5,9 @@
 		font-weight: bold;
 	}
 
-	.holder {
-		width: 400px;
-		margin-top: 100px;
+	.pendulum-holder {
+		width: 100%;
+		margin: 10% auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -17,13 +17,12 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		animation: myMove 2.5s infinite ease-in-out;
+		animation: oscillation 2.5s infinite ease-in-out;
 		transform-origin: 50% 0%;
 	}
 
 
 	.stem {
-		border: 1px red;
 		height: 100px;
 		width: 5px;
 		background-color: red;
@@ -34,7 +33,7 @@
 		width: 25px;
 		background-color: #16b844;
 		border-radius: 50%;
-		border: 1px red;
+		border: 1px red solid;
 	}
 
 	.shadow {
@@ -42,38 +41,166 @@
 		width: 25px;
 		border-radius: 50%;
 		background-color: rgba(0, 0, 0, 0.2);
-		animation: myShadow 2.5s infinite ease-in-out;
+		animation: oscillationShadow 2.5s infinite ease-in-out;
 	}
 
-	@keyframes myMove {
+	@keyframes oscillation {
 		0%,
 		100% {
 			transform: rotate(-40deg);
 		}
+
 		50% {
 			transform: rotate(40deg);
 		}
 	}
 
 
-	@keyframes myShadow {
+	@keyframes oscillationShadow {
 		0% {
 			transform: scale(2, .5) translate(50px);
 			filter: blur(20px);
 		}
+
 		25%,
 		75% {
-
 			filter: blur(0px);
 		}
+
 		50% {
 			transform: scale(2, .5) translate(-50px);
 			filter: blur(20px);
 		}
+
 		100% {
 			transform: scale(2, .5) translate(50px);
 			filter: blur(20px);
 
 		}
+	}
+
+	.logoHolder{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+	}
+	.outerSquare {
+		width: 104px;
+		height:104px;
+		position: relative;
+		animation: rotate 2.5s 1 ease-in-out,zoom 2.5s 2.5s 1;
+		display:flex;
+		flex-wrap: wrap;
+	}
+
+	.innerSquare {
+		width: 50px;
+		height: 50px;
+		box-shadow: (100px 100px 0px 0px rgba(96, 130, 240, 0.5));
+
+	}
+
+	.red {
+		background-color: red;
+		margin:1px;
+		animation: moveLeftTop 2.5s;
+	}
+	.yellow {
+		background-color: #f0d62f;
+		margin:1px;
+		animation: moveRightTop 2.5s ;
+	}
+
+	.aquamarine {
+		background-color: aquamarine;
+		margin:1px;
+		animation: moveLeftBottom 2.5s ;
+	}
+	.green {
+		background-color: green;
+		margin:1px;
+		animation: moveRightBottom 2.5s ;
+	}
+
+
+
+
+	@keyframes moveLeftTop {
+		0% {
+
+			transform: translate(-200px,-200px)
+		}
+		100% {
+
+			transform: translate(0,0)
+		}
+	}
+	@keyframes moveRightTop {
+		0% {
+
+			transform: translate(200px,-200px)
+		}
+		100% {
+
+			transform: translate(0px,0px)
+		}
+	}
+	@keyframes moveLeftBottom {
+		0% {
+
+			transform: translate(-200px,200px)
+		}
+		100% {
+
+			transform: translate(0px,0px)
+		}
+	}
+	@keyframes moveRightBottom {
+		0% {
+
+			transform: translate(200px,200px)
+		}
+
+		100% {
+
+			transform: translate(0px,0px)
+		}
+	}
+	@keyframes zoom {
+		0%{
+			transform: scale(1, 1) translate(-0,0);;
+		}
+		50%{
+			transform: scale(2, 2) translate(-0px,-0px);
+		}
+		100%{
+			transform: scale(1, 1) translate(-0,0);
+
+		}
+
+	}
+	@keyframes rotate {
+		0%,100%{
+			transform: rotate(0deg);
+		}
+		50%{
+			transform: rotate(-40deg);
+		}
+	}
+
+	.transitionExampleHolder{
+	}
+
+	.transitionExample{
+		margin:150px  auto;
+		width: 100px;
+		height: 100px;
+		background-color: #f0d62f;
+		transition: background-color, 1s;
+	}
+	.transitionExample:hover {
+		background-color:#16b844
 	}
 }
