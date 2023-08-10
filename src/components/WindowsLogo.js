@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WindowsLogo = () =>
-	<div className="logoHolder border">
+	<div className="holder">
 		<div className="title">Windows logo using animation</div>
 		<div className="outerSquare">
 			<div className="innerSquare red"/>

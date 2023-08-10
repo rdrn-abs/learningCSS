@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Pendulum = () =>
-	<div className="pendulum-holder border">
+	<div className="holder">
 		<div className="title">Pendulum using animation</div>
 		<div className="pendulum">
 			<div className="stem"/>
